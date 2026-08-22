@@ -6,6 +6,7 @@ def get_statistics(weights):
     x = weights.detach().cpu().numpy().ravel()
 
     return {
+        "num_parameters": len(x),
         "mean": float(np.mean(x)),
         "std": float(np.std(x)),
         "min": float(np.min(x)),

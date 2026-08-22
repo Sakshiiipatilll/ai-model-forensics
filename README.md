@@ -1,33 +1,73 @@
 # AI Model Forensics
 
-A defensive ML system for detecting suspicious or tampered AI model weights.
+## Detecting Suspicious AI Model Artifacts
 
-## Features
+AI Model Forensics is a defensive machine-learning system designed to detect suspicious modifications and hidden anomalies inside trained AI model artifacts.
 
-- Model weight extraction
-- Statistical weight analysis
+Instead of analyzing the model's source code, the system performs forensic analysis directly on model weights and combines statistical, structural, behavioral, and machine-learning signals.
+
+---
+
+## Key Features
+
+- PyTorch model scanning
+- Weight distribution analysis
 - Entropy analysis
-- Precision analysis
-- Bit-pattern analysis
+- Precision-pattern analysis
+- Bit-level analysis
 - Layer correlation analysis
 - Layer anomaly detection
-- ML-based clean/tampered classification
-- Model risk scoring
-- Explainable forensic report
+- Behavioral trigger analysis
+- Random Forest forensic classifier
+- Explainable risk scoring
+- Suspicious-layer identification
+- Streamlit forensic dashboard
+- JSON forensic reports
+- Downloadable scan reports
 
-## Workflow
+---
 
-Model → Weight Analysis → Forensic Features → Anomaly Detection → ML Classification → Risk Score → Report
+## System Architecture
 
-## Tech Stack
-
-- Python
-- PyTorch
-- NumPy
-- SciPy
-- Pandas
-- Scikit-learn
-
-## Project Status
-
-Prototype under development.
+```text
+             PyTorch Model
+                   |
+                   v
+            Model Loader
+                   |
+                   v
+            Weight Extraction
+                   |
+        +----------+----------+
+        |          |          |
+        v          v          v
+   Statistical   Bit-Level  Behavioral
+    Analysis     Analysis    Analysis
+        |          |          |
+        +----------+----------+
+                   |
+                   v
+          Feature Engineering
+                   |
+                   v
+        Random Forest Detector
+                   |
+                   v
+          ML Probability
+                   |
+                   v
+          Risk Score Engine
+                   |
+          +--------+--------+
+          |                 |
+          v                 v
+     CLEAN /              Risk
+   SUSPICIOUS            Score
+          |                 |
+          +--------+--------+
+                   |
+                   v
+          Streamlit Dashboard
+                   |
+                   v
+          Forensic JSON Report

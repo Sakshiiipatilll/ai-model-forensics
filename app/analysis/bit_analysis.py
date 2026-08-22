@@ -11,4 +11,4 @@ def bit_pattern_score(weights):
 
     entropy = -np.sum(p * np.log2(p))
 
-    return float(entropy)
+    return float(entropy / 8.0)

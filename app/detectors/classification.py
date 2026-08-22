@@ -1,8 +1,11 @@
+from app.config import RISK_LOW, RISK_MEDIUM, RISK_HIGH
+
+
 def classify_risk(score):
-    if score < 25:
+    if score < RISK_LOW:
         return "LOW"
-    if score < 60:
+    if score < RISK_MEDIUM:
         return "MEDIUM"
-    if score < 80:
+    if score < RISK_HIGH:
         return "HIGH"
     return "CRITICAL"

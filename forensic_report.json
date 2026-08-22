@@ -1,0 +1,14 @@
+{
+    "model": "data\\models\\model.pt",
+    "risk_score": 34.42,
+    "risk_level": "MEDIUM",
+    "confidence": "Low",
+    "layer_correlation": 1.0,
+    "trigger_score": 0.5516026020050049,
+    "anomalous_layers": {
+        "0.weight": 0.4842035421004339,
+        "0.bias": 0.8633358620097029,
+        "2.weight": 0.7102495999564213,
+        "2.bias": 1.3002037787881697
+    }
+}
