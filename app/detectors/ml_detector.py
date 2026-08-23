@@ -2,7 +2,7 @@ import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
 def train_detector(path):
@@ -22,7 +22,11 @@ def train_detector(path):
     model.fit(X_train, y_train)
 
     prediction = model.predict(X_test)
+
     print("Accuracy:", accuracy_score(y_test, prediction))
+    print("Precision:", precision_score(y_test, prediction))
+    print("Recall:", recall_score(y_test, prediction))
+    print("F1 Score:", f1_score(y_test, prediction))
 
     joblib.dump(model, "app/detectors/model.pkl")
 
